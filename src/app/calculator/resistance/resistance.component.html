@@ -1,0 +1,31 @@
+<h1>Welcome to Resistance Calculator!</h1>
+
+<div class="color-math border-area">
+  <p id="resistanceResult">Resistance: {{ results }}</p>
+  <h3>Select bands:</h3>
+  <p>Digits and Multiplier and Tolerance</p>
+  <form (ngSubmit)="runCalculations()" #regForm="ngForm">
+    <div class="form-group">
+      <select [(ngModel)]="digits1" name="digits1" id="digits1">
+        <option class="form-control" *ngFor="let color of figures; index as i" value="{{ color }}">{{ color }}</option>
+      </select>
+      <select [(ngModel)]="digits2" name="digits2" id="digits2">
+        <option class="form-control" *ngFor="let color of figures; index as i" value="{{ color }}">{{ color }}</option>
+      </select>
+      <select [(ngModel)]="digits3" name="digits3" id="digits3">
+        <option class="form-control" *ngFor="let color of figures; index as i" value="{{ color }}">{{ color }}</option>
+      </select>
+      <select [(ngModel)]="multiplyResult" name="multiply" id="multiply">
+        <option class="form-control" *ngFor="let color of multiplier; index as i" value="{{ color }}">{{ color }}</option>
+      </select>
+      <select [(ngModel)]="toleranceResult" name="tolerance" id="tolerance">
+        <option class="form-control" *ngFor="let color of tolerance; index as i" value="{{ color }}">{{ color }}</option>
+      </select>
+    </div>
+    <button type="submit">Calculate</button>
+  </form>
+</div>
+
+<div class="debug border-area">
+  <p>Debug</p>
+</div>
