@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalculateServiceService } from '../../services/calculate-service.service';
 
 @Component({
   selector: 'app-resistance',
@@ -10,13 +11,13 @@ export class ResistanceComponent implements OnInit {
   public multiplier : string[];
   public tolerance : string[];
   public results : number;
-  public digits1 : number;
-  public digits2 : number;
-  public digits3 : number;
-  public multiplyResult : number;
-  public toleranceResult : number;
+  public digits1 : string;
+  public digits2 : string;
+  public digits3 : string;
+  public multiplyResult : string;
+  public toleranceResult : string;
 
-  constructor() { 
+  constructor(private calculateService : CalculateServiceService) { 
     this.results = 0;
     this.figures = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"];
     this.multiplier = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"];
@@ -27,8 +28,8 @@ export class ResistanceComponent implements OnInit {
   }
 
   runCalculations() {
-    
-    this.results = this.digits1 + this.digits2 + this.digits3;
+    this.calculateService.doMath(this.digits1, this.digits2, this.digits3, this.multiplyResult, this.toleranceResult);
+    this.results = this.calculateService.getResults();
   }
 
 }

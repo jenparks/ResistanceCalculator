@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ResistanceComponent } from './calculator/resistance/resistance.component';
+import { CalculateServiceService } from './services/calculate-service.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { ResistanceComponent } from './calculator/resistance/resistance.componen
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    CalculateServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
