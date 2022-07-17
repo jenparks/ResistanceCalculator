@@ -6,5 +6,5 @@ RUN npm install -g @angular/cli
 RUN npm install --global http-server
 
 # Build application and start webserver on port 4200
-CMD ["dockerscript.sh"]
+CMD ["/app/dockerscript.sh"]
 
