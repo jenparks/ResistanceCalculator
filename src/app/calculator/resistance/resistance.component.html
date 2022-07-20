@@ -2,6 +2,7 @@
 
 <div class="color-math border-area">
   <p id="resistanceResult">Resistance: {{ results }}</p>
+  <p>{{ infoMessage }}
   <h3>Select bands:</h3>
   <p>Digits and Multiplier and Tolerance</p>
   <form (ngSubmit)="runCalculations()" #regForm="ngForm">
@@ -24,8 +25,4 @@
     </div>
     <button type="submit">Calculate</button>
   </form>
-</div>
-
-<div class="debug border-area">
-  <p>Debug</p>
 </div>
