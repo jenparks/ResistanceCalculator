@@ -24,7 +24,10 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        echo 'Not yet implemented'
+        sh 'docker image remove -f deployimage || true'
+        sh 'docker rm -f deploycontainer || true'
+        sh 'docker build --tag deployimage .'
+        sh 'docker run -p 5000:4200 -d -it --name deploycontainer -v $WORKSPACE:/app deployimage:latest'
       }
     }
   }
