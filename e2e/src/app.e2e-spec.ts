@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, by, element } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,9 +8,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display title message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('cs6261project4 app is running!');
+    var mainTitle = element(by.id('welcome'));
+    expect(mainTitle.getText()).toEqual('Welcome to Resistance Calculator!');
   });
 
 });

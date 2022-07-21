@@ -1,8 +1,6 @@
-<h1>Welcome to Resistance Calculator!</h1>
-
 <div class="color-math border-area">
   <p id="resistanceResult">Resistance: {{ results }}</p>
-  <p>{{ infoMessage }}
+  <p id="infoMessage">{{ infoMessage }}
   <h3>Select bands:</h3>
   <p>Digits and Multiplier and Tolerance</p>
   <form (ngSubmit)="runCalculations()" #regForm="ngForm">
@@ -23,6 +21,6 @@
         <option class="form-control" *ngFor="let color of tolerance; index as i" value="{{ color }}">{{ color }}</option>
       </select>
     </div>
-    <button type="submit">Calculate</button>
+    <button id="calculate" type="submit">Calculate</button>
   </form>
 </div>
